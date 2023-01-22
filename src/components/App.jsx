@@ -4,13 +4,16 @@ import Comtacts from './Contacts/Contacts';
 import { nanoid } from 'nanoid';
 import Filter from './ContactsFilter/ContactsFilter';
 
-const INITIAL_STATE = {
-  contacts: [],
-  filter: '',
-};
+// const INITIAL_STATE = {
+//   contacts: [],
+//   filter: '',
+// };
 
 export class App extends Component {
-  state = { ...INITIAL_STATE };
+  state = { 
+    contacts: [],
+    filter:'',
+  };
 
   addContact = (name, number) => {
     if (this.state.contacts.find(contact => contact.name === name)) {
@@ -45,7 +48,7 @@ export class App extends Component {
       this.setState({ contacts: parseContacts });
     }
     else {
-      this.setState({contacts: this.INITIAL_STATE.contacts})
+      this.setState({contacts: this.state.contacts})
     }
 }
 
